@@ -33,6 +33,31 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Center(
+          child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+        Text(
+          'This is where the question text will go.',
+          style: TextStyle(color: Colors.white, fontSize: 30.0),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Container(margin: 
+            color: Colors.green,
+            child: Text(
+              'true',
+              style: TextStyle(color: Colors.white, fontSize: 30.0),
+            ),
+          ),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Text(
+            'false',
+            style: TextStyle(color: Colors.white, fontSize: 30.0),
+          ),
+        )
+      ])),
+    );
   }
 }
