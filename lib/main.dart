@@ -41,10 +41,12 @@ class _QuizPageState extends State<QuizPage> {
             flex: 5,
             child: Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Text(
-                'This is where the question text will go.',
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 25.0),
+              child: Center(
+                child: Text(
+                  'This is where the question text will go.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white, fontSize: 25.0),
+                ),
               ),
             ),
           ),
@@ -55,9 +57,11 @@ class _QuizPageState extends State<QuizPage> {
                 style: ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(Colors.green),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  print("The user picked true");
+                },
                 child: Text(
-                  'true',
+                  'True',
                   style: TextStyle(color: Colors.white, fontSize: 30.0),
                 ),
               ),
@@ -70,10 +74,12 @@ class _QuizPageState extends State<QuizPage> {
                 style: ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(Colors.red),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  print("The user picked false");
+                },
                 child: Text(
-                  'false',
-                  style: TextStyle(color: Colors.white, fontSize: 30.0),
+                  'False',
+                  style: TextStyle(color: Colors.white, fontSize: 25.0),
                 ),
               ),
             ),
