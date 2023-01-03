@@ -48,21 +48,34 @@ class _QuizPageState extends State<QuizPage> {
               ),
             ),
           ),
-          TextButton(
-            onPressed: () {},
-            child: Container(
-              color: Colors.green,
-              child: Text(
-                'true',
-                style: TextStyle(color: Colors.white, fontSize: 30.0),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: TextButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.green),
+                ),
+                onPressed: () {},
+                child: Text(
+                  'true',
+                  style: TextStyle(color: Colors.white, fontSize: 30.0),
+                ),
               ),
             ),
           ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'false',
-              style: TextStyle(color: Colors.white, fontSize: 30.0),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: TextButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.red),
+                ),
+                onPressed: () {},
+                child: Text(
+                  'false',
+                  style: TextStyle(color: Colors.white, fontSize: 30.0),
+                ),
+              ),
             ),
           )
         ]);
