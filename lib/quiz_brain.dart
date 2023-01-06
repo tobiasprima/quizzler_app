@@ -45,4 +45,18 @@ class QuizBrain {
   bool getQuestionAnswer() {
     return _questionBank[_questionNumber].questionAnswer;
   }
+
+  bool isFinished() {
+    if (_questionNumber == _questionBank.length - 1) {
+      print("This is the last question");
+      return true;
+    } else {
+      print("This is not the last question");
+      return false;
+    }
+  }
+
+  void reset() {
+    _questionNumber = 0;
+  }
 }
