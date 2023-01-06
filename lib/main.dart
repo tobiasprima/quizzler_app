@@ -79,6 +79,8 @@ class _QuizPageState extends State<QuizPage> {
                 bool correctAnswer = answers[questionNumber];
                 if (correctAnswer == true) {
                   print('The user got it right');
+                } else {
+                  print('user got it wrong');
                 }
                 setState(
                   () {
