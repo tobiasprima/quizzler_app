@@ -34,13 +34,20 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-  List<Widget> scoreKeeper = [
-    Icon(Icons.check, color: Colors.green),
-    Icon(Icons.check, color: Colors.green),
-    Icon(Icons.close, color: Colors.red),
-    Icon(Icons.close, color: Colors.red),
-    Icon(Icons.close, color: Colors.red),
-  ];
+  List<Widget> scoreKeeper = [];
+
+  void checkAnswer(bool userPickedAnswer) {
+    bool correctAnswer = quizBrain.getQuestionAnswer();
+    if (userPickedAnswer == correctAnswer) {
+      scoreKeeper.add(
+        Icon(Icons.check, color: Colors.green),
+      );
+    } else {
+      scoreKeeper.add(
+        Icon(Icons.close, color: Colors.red),
+      );
+    }
+  }
   // List<String> questions = [
   //   'Approximately one quarter of human bones are in the feet',
   //   'A slug\'s blood is green.'
@@ -77,12 +84,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 // The user picked true
-                bool correctAnswer = quizBrain.getQuestionAnswer();
-                if (correctAnswer == true) {
-                  print('The user got it right');
-                } else {
-                  print('user got it wrong');
-                }
+                checkAnswer(true);
                 setState(
                   () {
                     scoreKeeper.add(
@@ -111,12 +113,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 // The user picked false
-                bool correctAnswer = quizBrain.getQuestionAnswer();
-                if (correctAnswer == false) {
-                  print('The user got it right');
-                } else {
-                  print('user got it wrong');
-                }
+                checkAnswer(false);
                 setState(
                   () {
                     scoreKeeper.add(
