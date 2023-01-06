@@ -109,7 +109,13 @@ class _QuizPageState extends State<QuizPage> {
                 backgroundColor: MaterialStatePropertyAll(Colors.red),
               ),
               onPressed: () {
-                print("The user picked false");
+                // The user picked false
+                bool correctAnswer = answers[questionNumber];
+                if (correctAnswer == false) {
+                  print('The user got it right');
+                } else {
+                  print('user got it wrong');
+                }
                 setState(
                   () {
                     scoreKeeper.add(
